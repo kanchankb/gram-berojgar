@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="loadData()">
+    <form class="responsive-form" >
+        <h2>बेरोजगारी भत्ता प्राप्त करने हेतु आवेदन-पत्र</h2>
+        <p>(कृपया इस आवेदन पत्र को भरने से पूर्व आवेदन पत्र के अन्त में दी गई शर्तों एवं सामान्य निर्देशों को भली भांति पढ़ लें।)</p>
+        <div class="form-group">
+            <label for="applicant-name">1- आवेदक का पूरा नाम</label>
+            <input type="text" id="applicant-name" name="applicant-name">
+        </div>
+        <div class="form-group">
+            <label for="father-name">2- पिता/पति का नाम</label>
+            <input type="text" id="father-name" name="father-name">
+        </div>
+        <div class="form-group">
+            <label>3- लिंग</label>
+            <div class="form-check">
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">महिला</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">पुरुष</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>4- वैवाहिक स्थिति</label>
+            <div class="form-check">
+                <input type="checkbox" id="unmarried" name="marital-status" value="unmarried">
+                <label for="unmarried">अविवाहित</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" id="married" name="marital-status" value="married">
+                <label for="married">विवाहित</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" id="widow" name="marital-status" value="widow">
+                <label for="widow">विधवा/विधुर</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" id="divorced" name="marital-status" value="divorced">
+                <label for="divorced">तलाकशुदा/परित्यक्ता</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="dob">5- (अ) जन्म तिथि</label>
+            <input type="date" id="dob" name="dob">
+        </div>
+        <div class="form-group">
+            <label>5- (आ) 1 अप्रैल 2012 को आयु</label>
+            <input type="number" name="age-year" placeholder="वर्ष">
+            <input type="number" name="age-month" placeholder="माह">
+        </div>
+        <div class="form-group">
+            <label>6- धर्म</label>
+            <div class="form-check">
+                <input type="radio" id="hindu" name="religion" value="hindu">
+                <label for="hindu">हिन्दू</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" id="muslim" name="religion" value="muslim">
+                <label for="muslim">मुस्लिम</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" id="sikh" name="religion" value="sikh">
+                <label for="sikh">सिख</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" id="christian" name="religion" value="christian">
+                <label for="christian">ईसाई</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" id="jain" name="religion" value="jain">
+                <label for="jain">जैन</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" id="other-religion" name="religion" value="other">
+                <label for="other-religion">अन्य</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>7- जाति</label>
+            <div class="form-check">
+                <input type="radio" id="sc-st" name="caste" value="sc-st">
+                <label for="sc-st">अनुसूचित जाति/जनजाति</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" id="obc" name="caste" value="obc">
+                <label for="obc">पिछड़ा वर्ग</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" id="general" name="caste" value="general">
+                <label for="general">सामान्य</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="permanent-address">8- मूल निवास का पता</label>
+            <textarea id="permanent-address" name="permanent-address" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="correspondence-address">9- पत्राचार निवास का पता</label>
+            <textarea id="correspondence-address" name="correspondence-address" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="district-office">10- जनपद स्तरीय सेवायोजन कार्यालय का नाम जहां पंजीकृत है</label>
+            <input type="text" id="district-office" name="district-office">
+        </div>
+        <div class="form-group">
+            <label for="registration-no">11- सेवायोजन कार्यालय द्वारा आवंटित पंजीकरण संख्या व दिनांक</label>
+            <input type="text" id="registration-no" name="registration-no">
+        </div>
+        <div class="form-group">
+            <label>12- शैक्षिक योग्यता</label>
+            <table>
+                <tr>
+                    <th>क्रम सं</th>
+                    <th>परीक्षा का नाम</th>
+                    <th>वर्ष</th>
+                    <th>उत्तीर्ण/अनुत्तीर्ण</th>
+                    <th>विषय/महत्वपूर्ण विषय</th>
+                    <th>बोर्ड/विश्वविद्यालय का नाम</th>
+                </tr>
+                <tr>
+                    <td><input type="number" name="serial-no"></td>
+                    <td><input type="text" name="exam-name"></td>
+                    <td><input type="number" name="year"></td>
+                    <td>
+                        <select name="status">
+                            <option value="passed">उत्तीर्ण</option>
+                            <option value="failed">अनुत्तीर्ण</option>
+                        </select>
+                    </td>
+                    <td><input type="text" name="subjects"></td>
+                    <td><input type="text" name="board"></td>
+                </tr>
+            </table>
+        </div>
+        <!-- <button type="submit">Submit</button> -->
+    </form>
+    <script>
+         function loadData(){
+            document.getElementById('applicant-name').value = localStorage.getItem('applicantName');
+            document.getElementById('father-name').value = localStorage.getItem('fatherName');
+            
+            let gender = localStorage.getItem('gender');
+            if (gender) {
+                document.querySelector(`input[name="gender"][value="${gender}"]`).checked = true;
+            }
+            
+            let maritalStatus = localStorage.getItem('maritalStatus');
+            if (maritalStatus) {
+                maritalStatus.split(', ').forEach(status => {
+                    document.querySelector(`input[name="marital-status"][value="${status}"]`).checked = true;
+                });
+            }
+            
+            document.getElementById('dob').value = localStorage.getItem('dob');
+            document.querySelector('input[name="age-year"]').value = localStorage.getItem('ageYear');
+            document.querySelector('input[name="age-month"]').value = localStorage.getItem('ageMonth');
+            
+            let religion = localStorage.getItem('religion');
+            if (religion) {
+                document.querySelector(`input[name="religion"][value="${religion}"]`).checked = true;
+            }
+            
+            let caste = localStorage.getItem('caste');
+            if (caste) {
+                document.querySelector(`input[name="caste"][value="${caste}"]`).checked = true;
+            }
+            
+            document.getElementById('permanent-address').value = localStorage.getItem('permanentAddress');
+            document.getElementById('correspondence-address').value = localStorage.getItem('correspondenceAddress');
+            document.getElementById('district-office').value = localStorage.getItem('districtOffice');
+            document.getElementById('registration-no').value = localStorage.getItem('registrationNo');
+            
+            document.querySelector('input[name="serial-no"]').value = localStorage.getItem('serialNo');
+            document.querySelector('input[name="exam-name"]').value = localStorage.getItem('examName');
+            document.querySelector('input[name="year"]').value = localStorage.getItem('year');
+            document.querySelector('select[name="status"]').value = localStorage.getItem('status');
+            document.querySelector('input[name="subjects"]').value = localStorage.getItem('subjects');
+            document.querySelector('input[name="board"]').value = localStorage.getItem('board');
+        }
+        
+        function redirectToPage2() {
+            localStorage.setItem('applicantName', document.getElementById('applicant-name').value);
+            localStorage.setItem('fatherName', document.getElementById('father-name').value);
+            
+            let gender = document.querySelector('input[name="gender"]:checked');
+            if (gender) {
+                localStorage.setItem('gender', gender.value);
+            }
+            
+            let maritalStatusElements = document.querySelectorAll('input[name="marital-status"]:checked');
+            let maritalStatus = [];
+            maritalStatusElements.forEach(element => maritalStatus.push(element.value));
+            localStorage.setItem('maritalStatus', maritalStatus.join(', '));
+            
+            localStorage.setItem('dob', document.getElementById('dob').value);
+            localStorage.setItem('ageYear', document.querySelector('input[name="age-year"]').value);
+            localStorage.setItem('ageMonth', document.querySelector('input[name="age-month"]').value);
+            
+            let religion = document.querySelector('input[name="religion"]:checked');
+            if (religion) {
+                localStorage.setItem('religion', religion.value);
+            }
+            
+            let caste = document.querySelector('input[name="caste"]:checked');
+            if (caste) {
+                localStorage.setItem('caste', caste.value);
+            }
+            
+            localStorage.setItem('permanentAddress', document.getElementById('permanent-address').value);
+            localStorage.setItem('correspondenceAddress', document.getElementById('correspondence-address').value);
+            localStorage.setItem('districtOffice', document.getElementById('district-office').value);
+            localStorage.setItem('registrationNo', document.getElementById('registration-no').value);
+            
+            localStorage.setItem('serialNo', document.querySelector('input[name="serial-no"]').value);
+            localStorage.setItem('examName', document.querySelector('input[name="exam-name"]').value);
+            localStorage.setItem('year', document.querySelector('input[name="year"]').value);
+            localStorage.setItem('status', document.querySelector('select[name="status"]').value);
+            localStorage.setItem('subjects', document.querySelector('input[name="subjects"]').value);
+            localStorage.setItem('board', document.querySelector('input[name="board"]').value);
+            
+            // window.location.href = 'form.html';
+        }
+
+
+        // ---------------------
+
+       
+    </script>
+</body>
+</html>
+'
+'
